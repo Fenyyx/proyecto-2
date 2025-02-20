@@ -1,0 +1,75 @@
+/* Estilos generales para la página */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+  }
+  
+  /* Estilos para el contenedor principal de la Sidebar */
+  .Sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;  /* Asegura que ocupe toda la altura de la pantalla */
+	width: 260px;   /* Establece un ancho fijo */
+	background-color: #f5f8fa;  /* Fondo de color claro */
+	border-right: 1px solid #e1e8ed;  /* Borde suave a la derecha */
+	padding: 20px;  /* Espaciado interno */
+  }
+  
+  /* Estilos para los items de la sidebar */
+  .sidebar-item {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	font-size: 18px;
+	color: #14171a;  /* Color gris oscuro para el texto */
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;  /* Transición suave al hacer hover */
+  }
+  
+  /* Efecto hover para cambiar el fondo de los items */
+  .sidebar-item:hover {
+	background-color: #e1e8ed;
+	border-radius: 8px;
+  }
+  
+  /* Estilo para el texto dentro de cada item */
+  .sidebar-item span {
+	margin-left: 15px;  /* Espacio entre el icono y el texto */
+	font-size: 18px;
+  }
+  
+  /* Estilos específicos para los iconos */
+  .sidebar-item svg {
+	font-size: 28px;
+
+	transition: color 0.2s ease-in-out;  /* Transición suave para el cambio de color */
+  }
+  
+  /* Cambio de color de los iconos cuando se hace hover */
+  .sidebar-item:hover svg {
+	color: #1da1f2;  /* Color azul cuando se hace hover */
+  }
+  
+  /* Estilo para el primer ítem (XIcon), con un tamaño de fuente más grande */
+  .sidebar-item:first-child {
+	font-size: 24px;
+
+	margin-bottom: 20px;
+  }
+  
+  /* Mejor manejo del espaciado */
+  .Sidebar {
+	padding-top: 20px;  /* Espaciado arriba */
+	padding-bottom: 20px;  /* Espaciado abajo */
+  }
+  
+  .RightSidebar {
+	width: 260px;
+	background-color: #f5f8fa;
+	border-left: 1px solid #e1e8ed;
+	padding: 20px;
+	height: auto;  /* Deja que la altura dependa del contenido */
+  }
+  

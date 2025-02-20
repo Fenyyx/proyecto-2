@@ -1,3 +1,4 @@
+// Tweet.jsx
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -7,7 +8,6 @@ function Tweet({ tweet, setTweets }) {
     content: tweet.content,
   });
 
-  // Función para manejar los cambios en el formulario de edición
   const handleEditChange = (e) => {
     const { name, value } = e.target;
     setEditTweet((prev) => ({
@@ -16,7 +16,6 @@ function Tweet({ tweet, setTweets }) {
     }));
   };
 
-  // Función para guardar los cambios del tweet editado
   const handleSaveEdit = () => {
     axios
       .put(`http://localhost:5005/tweets/${tweet.id}`, editTweet)
@@ -26,12 +25,11 @@ function Tweet({ tweet, setTweets }) {
             item.id === tweet.id ? response.data : item
           )
         );
-        setIsEditing(false); // Sale del modo de edición
+        setIsEditing(false);
       })
       .catch((error) => console.error("Error updating tweet:", error));
   };
 
-  // Función para eliminar el tweet
   const handleDelete = () => {
     axios
       .delete(`http://localhost:5005/tweets/${tweet.id}`)
@@ -45,14 +43,14 @@ function Tweet({ tweet, setTweets }) {
     <div className="tweet">
       <img
         className="user-avatar"
-        src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
+        src={tweet.avatar || "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"}
         alt="User Avatar"
       />
       <div className="tweet-content">
         <div className="tweet-header">
           <div className="user-info">
-            <span className="username">Username</span>
-            <span className="handle">@username</span>
+            <span className="username">{tweet.username}</span>
+            <span className="handle">{tweet.handle}</span>
           </div>
         </div>
         <div className="tweet-body">
@@ -72,7 +70,6 @@ function Tweet({ tweet, setTweets }) {
             </>
           )}
         </div>
-        {/* Botón para eliminar el tweet */}
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>

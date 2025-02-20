@@ -11,64 +11,78 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import PendingIcon from '@mui/icons-material/Pending';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import axios from "axios";
-
-
+import { useNavigate } from "react-router-dom";
 
 function Sidebar() {
+  const navigate = useNavigate();  // Hook para la navegación
+
+  // Función para manejar clics en los íconos
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar-item">
         <XIcon />
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Home */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/")}>
         <HomeIcon />
         <span>Home</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Explore */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/explore")}>
         <SearchIcon />
         <span>Explore</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Notifications */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/notifications")}>
         <NotificationsNoneIcon />
         <span>Notifications</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Messages */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/messages")}>
         <MailOutlineIcon />
         <span>Messages</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Bookmarks */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/bookmarks")}>
         <BookmarkBorderIcon />
         <span>Bookmarks</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Jobs */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/jobs")}>
         <BusinessCenterIcon />
         <span>Jobs</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Communities */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/communities")}>
         <PeopleOutlineIcon />
         <span>Communities</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Premium */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/premium")}>
         <VerifiedIcon />
         <span>Premium</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Verified Orgs */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/verified")}>
         <FlashOnIcon />
         <span>Verified Orgs</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de Profile */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/profile/@defaultuser")}>
         <PermIdentityIcon />
         <span>Profile</span>
       </div>
-      <div className="sidebar-item">
+      {/* Botón de More */}
+      <div className="sidebar-item" onClick={() => handleNavigation("/more")}>
         <PendingIcon />
         <span>More</span>
       </div>
-
     </div>
   );
 }
 
 export default Sidebar;
-{/* <span><ButtonColors/></span> */}

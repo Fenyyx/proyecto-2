@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import React from 'react'
+
 
 function Profile() {
-  const { handle } = useParams();
+  const { handle } = useParams();  // Obtenemos el handle de la URL
   const [user, setUser] = useState(null);
   const [tweets, setTweets] = useState([]);
-  const [error, setError] = useState(null);  // Para manejar errores
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios.get(`http://localhost:5005/tweets?handle=${handle}`)
@@ -28,7 +30,7 @@ function Profile() {
       });
   }, [handle]);
 
-  if (error) return <p>{error}</p>;  // Mostrar error si ocurre
+  if (error) return <p>{error}</p>;
   if (!user) return <p>Loading profile...</p>;
 
   return (
@@ -49,4 +51,6 @@ function Profile() {
 }
 
 export default Profile;
+
+
 

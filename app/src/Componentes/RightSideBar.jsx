@@ -12,6 +12,8 @@ function RightSidebar() {
           <li>#Ola k ashe</li>
           <li>#Nosfuimoh</li>
           <li>#SamValentín</li>
+          <li>#KiraAmbulancia</li>
+          <li>#Bichibooooey</li>
         </ul>
       </div>
     </div>

@@ -52,13 +52,16 @@
   .top-bar {
     border-bottom: 1px solid #e1e8ed;
     padding: 10px 0;
+    max-width: 300px;
   }
   
   .search-bar input {
     width: 100%;
+    max-width: 500px;
     padding: 8px 12px;
     border: 1px solid #e1e8ed;
-    border-radius: 30px;
+    margin-bottom: 10px;
+    border-radius: 20px;
     font-size: 16px;
     background-color: #f5f8fa;
   }
@@ -113,6 +116,8 @@
   .right-sidebar {
     width: 300px;
     padding: 20px;
+    display: flex;
+    justify-content: center;
     background-color: #f5f8fa;
     border-left: 1px solid #e1e8ed;
     position: fixed;  /* Fija la sidebar a la derecha */
@@ -192,14 +197,6 @@
     top: 0;
     z-index: 100;
   }
-  
-  .search-bar input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-  }
-  
   .feed {
     display: flex;
     flex-direction: column;

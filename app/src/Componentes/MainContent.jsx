@@ -5,9 +5,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const defaultUser = {
-  username: "Default User",
-  handle: "@defaultuser",
-  avatar: "https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"
+  username: "Joseph Jostar",
+  handle: "@BestJojo",
+  avatar: "https://static.tvtropes.org/pmwiki/pub/images/41a8bb16_eecd_4de0_9f43_e8e08b7d4495.jpeg"
 };
 
 function MainContent({ tweets, setTweets }) {

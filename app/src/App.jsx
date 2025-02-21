@@ -38,7 +38,7 @@ function App() {
           <RightSidebar />
         </div>
       </div>
-      <ButtonColors />
+
     </div>
   );
 }
